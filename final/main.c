@@ -17,6 +17,7 @@ void wdt_c_handler()
   blink_count++;
   
   if(blink_count == 60 && curr_state_machine != 4){
+    dim();
     blink_count = 0;
     redrawScreen = 1;
   }
