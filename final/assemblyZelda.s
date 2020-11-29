@@ -57,103 +57,103 @@ case0:				;Notes are from the previous lab
 	MOV #0, 0(R1)		;note = 0
 	JMP noteConvert		;
 case1:
-	MOV #286, 0(R1)		;note = F
+	MOV #2863, 0(R1)		;note = F
 	JMP noteConvert		;
 case2:
-	MOV #454, 0(R1)		;note = A
+	MOV #4545, 0(R1)		;note = A
 	JMP noteConvert		;
 case3:
-	MOV #404, 0(R1)		;note = B
+	MOV #4049, 0(R1)		;note = B
 	JMP noteConvert		;
 case4:
-	MOV #404, 0(R1)		;note = B
+	MOV #4049, 0(R1)		;note = B
 	JMP noteConvert		;
 case5:
-	MOV #286, 0(R1)		;note = F
+	MOV #2863, 0(R1)		;note = F
 	JMP noteConvert		;
 case6:
-	MOV #454, 0(R1)		;note = A
+	MOV #4545, 0(R1)		;note = A
 	JMP noteConvert		;
 case7:
-	MOV #404, 0(R1)		;note = B
+	MOV #4049, 0(R1)		;note = B
 	JMP noteConvert		;
 case8:
-	MOV #404, 0(R1)		;note = B
+	MOV #4049, 0(R1)		;note = B
 	JMP noteConvert		;
 case9:
-	MOV #286, 0(R1)		;note = F
+	MOV #2863, 0(R1)		;note = F
 	JMP noteConvert		;
 case10:
-	MOV #454, 0(R1)		;note = A
+	MOV #4545, 0(R1)		;note = A
 	JMP noteConvert		;
 case11:
-	MOV #404, 0(R1)		;note = E
+	MOV #4049, 0(R1)		;note = B
 	JMP noteConvert		;
 case12:
-	MOV #303, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case13:
-	MOV #340, 0(R1)		;note = D
+	MOV #3405, 0(R1)		;note = D
 	JMP noteConvert		;
 case14:
-	MOV #340, 0(R1)		;note = D
+	MOV #3405, 0(R1)		;note = D
 	JMP noteConvert		;
 case15:
-	MOV #404, 0(R1)		;note = D
+	MOV #4045, 0(R1)		;note = D
 	JMP noteConvert		;
 case16:
-	MOV #381, 0(R1)		;note = B
+	MOV #3817, 0(R1)		;note = C
 	JMP noteConvert		;
 case17:
-	MOV #404, 0(R1)		;note = CNOTE
+	MOV #4049, 0(R1)		;note = B
 	JMP noteConvert		;
 case18:
-	MOV #255, 0(R1)		;note = B
+	MOV #2551, 0(R1)		;note = G
 	JMP noteConvert		;
 case19:
-	MOV #303, 0(R1)		;note = G
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case20:
-	MOV #303, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case21:
-	MOV #303, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case22:
-	MOV #303, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case23:
-	MOV #303, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case24:
-	MOV #340, 0(R1)		;note = D
+	MOV #3405, 0(R1)		;note = D
 	JMP noteConvert		;
 case25:
-	MOV #303, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case26:
-	MOV #255, 0(R1)		;note = G
+	MOV #2551, 0(R1)		;note = G
 	JMP noteConvert		;
 case27:
-	MOV #303, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case28:
-	MOV #303, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case29:
-	MOV #303, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case30:
-	MOV #303, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case31:
-	MOV #303, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case32:
-	MOV #303, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 case33:
-	MOV #0, 0(R1)		;note = E
+	MOV #3033, 0(R1)		;note = E
 	JMP noteConvert		;
 default:
 	MOV #0, 0(R1)		;note = 0
