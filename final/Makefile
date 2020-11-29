@@ -11,11 +11,11 @@ AR		= msp430-eld-ar
 all:final.elf
 
 #additional rules for files
-wakedemo.elf: ${COMMON_OBJECTS} buzzer.o stateMachines.o p2switches.o wakedemo.o wdt_handler.o dim.o
+final.elf: ${COMMON_OBJECTS} assemblyZelda.o buzzer.o stateMachines.o p2switches.o main.o wdt_handler.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd -lp2sw
 
 load: final.elf
 	msp430loader.sh $^
 
 clean:
-	rm -f *.o *.elf
+	rm -f *.o *.elf *h ~*
