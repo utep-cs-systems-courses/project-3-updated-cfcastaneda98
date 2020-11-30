@@ -11,7 +11,7 @@ AR		= msp430-eld-ar
 all:final.elf
 
 #additional rules for files
-final.elf: ${COMMON_OBJECTS} assemblyZelda.o buzzer.o stateMachines.o p2switches.o main.o wdt_handler.o
+final.elf: ${COMMON_OBJECTS} assemblyZelda.o buzzer.o stateMachines.o led.o p2switches.o main.o wdt_handler.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ -lTimer -lLcd -lp2sw
 
 load: final.elf

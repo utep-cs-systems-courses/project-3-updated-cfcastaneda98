@@ -10,7 +10,6 @@
 typedef unsigned char u_char;
 typedef unsigned int u_int;
 
-extern const unsigned int mario[40][40];
 extern const unsigned int pokeball[40][40];
 extern const unsigned int kirby[40][40];
 

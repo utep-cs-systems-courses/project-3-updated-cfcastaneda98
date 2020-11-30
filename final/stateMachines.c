@@ -163,13 +163,10 @@ void state_song_zelda()
   case 17:
     break;
   case 18:
-    drawTriangle(63,30,20,COLOR_BROWN);
     break;
   case 19:
-    drawTriangle(33,30,50,COLOR_BROWN);
     break;
   case 20:
-    drawTriangle(93,30,50,COLOR_BROWN);
     break;
   case 21:
     break;
@@ -178,13 +175,10 @@ void state_song_zelda()
   case 23:
     break;
   case 24:
-    drawTriangle(63,30,20,COLOR_YELLOW);
     break;
   case 25:
-    drawTriangle(33,30,50,COLOR_YELLOW);
     break;
   case 26:
-    drawTriangle(93,30,50,COLOR_YELLOW);
     break;
   case 27:
     break;
@@ -193,13 +187,10 @@ void state_song_zelda()
   case 29:
     break;
   case 30:
-    drawTriangle(63,30,20,COLOR_BROWN);
     break;
   case 31:
-    drawTriangle(33,30,50,COLOR_BROWN);
     break;
   case 32:
-    drawTriangle(93,30,50,COLOR_BROWN);
     break;
   case 33:
     break;
@@ -358,13 +349,13 @@ void state_song_mario()
 
   switch(state_mario){
   case 0:
-    drawMario(20,70,COLOR_YELLOW);
+    drawString5x7(20,40,"Where's Mario?",COLOR_BLACK,COLOR_BLUE);
     break;
   case 1:
     break;
   default:
-    clearScreen(COLOR_YELLOW);
-    drawString8x12(20,125,"Athletic",COLOR_WHITE,COLOR_YELLOW);
+    clearScreen(COLOR_BLUE);
+    drawString8x12(20,125,"Athletic",COLOR_WHITE,COLOR_BLUE);
     state_mario = 0;
     break;
   }
@@ -499,21 +490,21 @@ void state_song_pokemon()
   switch(state_pokemon){
   case 0:
     drawPokeball(20,70,COLOR_RED);
+    drawString8x12(20,125,"Pallet Town",COLOR_WHITE,COLOR_RED);
     state_pokemon++;
     break;
   case 1:
-    drawPokeball(40,30,COLOR_RED);
+    drawPokeball(45,25,COLOR_RED);
     state_pokemon++;
     break;
   case 2:
-    drawPokeball(60,70,COLOR_RED);
+    drawPokeball(70,70,COLOR_RED);
     state_pokemon++;
     break;
   case 3:
     break;
   default:
     state_pokemon = 0;
-    drawString8x12(10,110, "Pallet Town",COLOR_WHITE,COLOR_RED);
     clearScreen(COLOR_RED);
     break;
   }
@@ -686,6 +677,10 @@ void state_song_kirby()
 
   switch(state_kirby){
   case 0:
+    drawKirby(20,20,COLOR_HOT_PINK);
+    drawString8x12(20,100,"Victory",COLOR_WHITE,COLOR_HOT_PINK);
+    drawString5x7(20,131,"Kirby is happy",COLOR_WHITE,COLOR_HOT_PINK);
+    drawString5x7(20,140,"to see you!",COLOR_WHITE,COLOR_HOT_PINK);
     state_kirby++;
     break;
   case 1:
@@ -699,8 +694,7 @@ void state_song_kirby()
     break;
   default:
     state_kirby = 0;
-    drawString8x12(20,125,"Victory",COLOR_WHITE,COLOR_BLUE);
-    clearScreen(COLOR_RED);
+    clearScreen(COLOR_HOT_PINK);
     break;
   }
   buzz_song_kirby();

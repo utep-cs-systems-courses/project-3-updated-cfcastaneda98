@@ -25,7 +25,7 @@ void wdt_c_handler()
     blink_count = 0;
     redrawScreen = 1;
   }
-  if(blink_count == 42 && curr_state_machine == 2){
+  if(blink_count == 30 && curr_state_machine == 2){
     blink_count = 0;
     redrawScreen = 1;
   }
@@ -33,7 +33,7 @@ void wdt_c_handler()
     blink_count = 0;
     redrawScreen = 1;
   }
-  if(blink_count == 10 && curr_state_machine == 4){
+  if(blink_count == 30 && curr_state_machine == 4){
     blink_count = 0;
     redrawScreen = 1;
   }

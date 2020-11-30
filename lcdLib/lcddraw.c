@@ -168,27 +168,6 @@ void drawTriangle(u_int center, u_int height, u_int rowOffset, u_int colorBGR)
   }
 }
 
-void drawMario(u_char offc, u_char offr, u_int bgColorBGR)
-{
-  u_char col = 0;
-  u_char row = 0;
-  while (row < 40) {
-    col = 0;
-    while (col < 40) {
-      if (mario[row][col] == 0)
-	drawPixel(col + offc, row+offr, bgColorBGR);
-      else if (mario[row][col] == 1)
-	drawPixel(col + offc, row+offr, COLOR_RED);
-      else if (mario[row][col] == 2)
-	drawPixel(col + offc, row+offr, COLOR_RED);
-      else if (mario[row][col] == 3)
-	drawPixel(col + offc, row+offr, COLOR_WHITE);
-      col++;
-    }
-    row++;
-  }
-}
-
 void drawPokeball(u_char offc, u_char offr, u_int bgColorBGR)
 {
   u_char col = 0;
