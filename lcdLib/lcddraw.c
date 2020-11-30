@@ -80,7 +80,7 @@ void drawChar8x12(u_char rcol, u_char rrow, char c,
   u_char bit = 0x01;
   u_char oc = c - 0x20;
 
-  lcd_setArea(rcol, rrow, rcol + 4, rrow + 7); /* relative to requested col/row */
+  lcd_setArea(rcol, rrow, rcol + 7, rrow + 12); /* relative to requested col/row */
   while (row < 13) {
     while (col < 8) {
       u_int colorBGR = (font_8x12[oc][col] & bit) ? fgColorBGR : bgColorBGR;
@@ -93,6 +93,25 @@ void drawChar8x12(u_char rcol, u_char rrow, char c,
   }
 }
 
+void drawChar11x16(u_char rcol, u_char rrow, char c, u_int fgColorBGR, u_int bgColorBGR)
+{
+  u_char col = 0;
+  u_char row = 0;
+  u_int bit = 0x0001;
+  u_char oc = c - 0x20;
+
+  lcd_setArea(rcol, rrow, rcol + 10, rrow + 16);
+  while(row < 17){
+    while(col < 11){
+      u_int colorBGR = (font_11x16[oc][col] & bit) ? fgColorBGR : bgColorBGR;
+      lcd_writeColor(colorBGR);
+      col++;
+    }
+    col = 0;
+    bit <<=1;
+    row++;
+  }
+}
 /** Draw string at col,row
  *  Type:
  *  FONT_SM - small (5x8,) FONT_MD - medium (8x12,) FONT_LG - large (11x16)
@@ -105,6 +124,26 @@ void drawChar8x12(u_char rcol, u_char rrow, char c,
  *  \param fgColorBGR Foreground color in BGR
  *  \param bgColorBGR Background color in BGR
  */
+void drawString8x12(u_char col, u_char row, char *string,
+		u_int fgColorBGR, u_int bgColorBGR)
+{
+  u_char cols = col;
+  while (*string) {
+    drawChar5x7(cols, row, *string++, fgColorBGR, bgColorBGR);
+    cols += 9;
+  }
+}
+
+void drawString11x16(u_char col, u_char row, char *string,
+		u_int fgColorBGR, u_int bgColorBGR)
+{
+  u_char cols = col;
+  while (*string) {
+    drawChar5x7(cols, row, *string++, fgColorBGR, bgColorBGR);
+    cols += 12;
+  }
+}
+
 void drawString5x7(u_char col, u_char row, char *string,
 		u_int fgColorBGR, u_int bgColorBGR)
 {
@@ -115,33 +154,79 @@ void drawString5x7(u_char col, u_char row, char *string,
   }
 }
 
-void drawString8x12(u_char col, u_char row, char *string,
-		u_int fgColorBGR, u_int bgColorBGR)
+
+
+
+
+void drawTriangle(u_int center, u_int height, u_int rowOffset, u_int colorBGR)
 {
-  u_char cols = col;
-  while (*string) {
-    drawChar8x12(cols, row, *string++, fgColorBGR, bgColorBGR);
-    cols += 9;
+  for(u_int row = 0; row < height; row++){
+    for(u_int col = 0; col < row; col++){
+      drawPixel(center+col, row + rowOffset, colorBGR);
+      drawPixel(center-col, row + rowOffset, colorBGR);
+    }
   }
 }
 
-/** Draw rectangle outline
- *  
- *  \param colMin Column start
- *  \param rowMin Row start 
- *  \param width Width of rectangle
- *  \param height Height of rectangle
- *  \param colorBGR Color of rectangle in BGR
- */
-void drawRectOutline(u_char colMin, u_char rowMin, u_char width, u_char height,
-		     u_int colorBGR)
+void drawMario(u_char offc, u_char offr, u_int bgColorBGR)
 {
-  /**< top & bot */
-  fillRectangle(colMin, rowMin, width, 1, colorBGR);
-  fillRectangle(colMin, rowMin + height, width, 1, colorBGR);
-
-  /**< left & right */
-  fillRectangle(colMin, rowMin, 1, height, colorBGR);
-  fillRectangle(colMin + width, rowMin, 1, height, colorBGR);
+  u_char col = 0;
+  u_char row = 0;
+  while (row < 40) {
+    col = 0;
+    while (col < 40) {
+      if (mario[row][col] == 0)
+	drawPixel(col + offc, row+offr, bgColorBGR);
+      else if (mario[row][col] == 1)
+	drawPixel(col + offc, row+offr, COLOR_RED);
+      else if (mario[row][col] == 2)
+	drawPixel(col + offc, row+offr, COLOR_RED);
+      else if (mario[row][col] == 3)
+	drawPixel(col + offc, row+offr, COLOR_WHITE);
+      col++;
+    }
+    row++;
+  }
 }
 
+void drawPokeball(u_char offc, u_char offr, u_int bgColorBGR)
+{
+  u_char col = 0;
+  u_char row = 0;
+  while (row < 40) {
+    col = 0;
+    while (col < 40) {
+      if (pokeball[row][col] == 0)
+	drawPixel(col + offc, row+offr, bgColorBGR);
+      else if (pokeball[row][col] == 1)
+	drawPixel(col + offc, row+offr, COLOR_BLACK);
+      else if (pokeball[row][col] == 2)
+	drawPixel(col + offc, row+offr, COLOR_RED);
+      else if (pokeball[row][col] == 3)
+	drawPixel(col + offc, row+offr, COLOR_WHITE);
+      col++;
+    }
+    row++;
+  }
+}
+
+void drawKirby(u_char offc, u_char offr, u_int bgColorBGR)
+{
+  u_char col = 0;
+  u_char row = 0;
+  while (row < 40) {
+    col = 0;
+    while (col < 40) {
+      if (kirby[row][col] == 0)
+	drawPixel(col + offc, row+offr, bgColorBGR);
+      else if (kirby[row][col] == 1)
+	drawPixel(col + offc, row+offr, COLOR_BLACK);
+      else if (kirby[row][col] == 2)
+	drawPixel(col + offc, row+offr, COLOR_HOT_PINK);
+      else if (kirby[row][col] == 3)
+	drawPixel(col + offc, row+offr, COLOR_PINK);
+      col++;
+    }
+    row++;
+  }
+}
