@@ -168,6 +168,22 @@ void drawTriangle(u_int center, u_int height, u_int rowOffset, u_int colorBGR)
   }
 }
 
+void drawRhombus(u_int center, u_int height, u_int rowOffset, u_int colorBGR)
+{
+  for(u_int row = 0; row < center; row++){
+    for(u_int col = 0; col < row; col++){
+      drawPixel(center + height + col, row + rowOffset, colorBGR);
+      drawPixel(center + height - col, row + rowOffset, colorBGR);
+    }
+  }
+  for(u_int col = 0; col < center; col++){
+    for(u_int row = center; row < center * 2 - col; row++){
+      drawPixel(center + height + col, row + rowOffset, colorBGR);
+      drawPixel(center + height - col, row + rowOffset, colorBGR);
+    }
+  }
+}
+  
 void drawPokeball(u_char offc, u_char offr, u_int bgColorBGR)
 {
   u_char col = 0;

@@ -72,7 +72,7 @@ void drawChar11x16(u_char col, u_char row, char c,
  */
 
 void drawTriangle(u_int center, u_int height, u_int rowOffset, u_int colorBGR);
-
+void drawRhombus(u_int center, u_int height, u_int rowOffset, u_int colorBGR);
 void drawMario(u_char offc, u_char offr, u_int bgColorBGR);
 void drawPokeball(u_char offc, u_char offr, u_int bgColorBGR);
 void drawKirby(u_char offc, u_char offr, u_int bgColorBGR);
