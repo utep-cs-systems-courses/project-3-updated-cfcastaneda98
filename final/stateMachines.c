@@ -346,15 +346,16 @@ buzzer_set_period(note);
 }
 void state_song_mario()
 {
-
   switch(state_mario){
   case 0:
-    drawString5x7(20,40,"Where's Mario?",COLOR_BLACK,COLOR_BLUE);
-    break;
-  case 1:
     break;
   default:
     clearScreen(COLOR_BLUE);
+    drawString5x7(20,40,"Where's Mario?",COLOR_WHITE,COLOR_BLUE);
+    drawRhombus(20,25,60,COLOR_RED);
+    drawString5x7(42,75,"?",COLOR_WHITE,COLOR_RED);
+    drawRhombus(20,70,60,COLOR_RED);
+    drawString5x7(88,75,"?",COLOR_WHITE,COLOR_RED);
     drawString8x12(20,125,"Athletic",COLOR_WHITE,COLOR_BLUE);
     state_mario = 0;
     break;
